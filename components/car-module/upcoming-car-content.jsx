@@ -20,7 +20,8 @@ export default async function UpcomingCarContent({
     const carModelsResponsePage = await fetchData(
       `/upcoming-cars/models?page=${page}`
     );
-    carModelsData = [...carModelsData, ...carModelsResponsePage?.data];
+    let data = carModelsResponsePage.data;
+    carModelsData = [...carModelsData, ...data];
   }
 
   // Find the car model based on the slug from all the pages
